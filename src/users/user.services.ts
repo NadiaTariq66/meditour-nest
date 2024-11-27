@@ -21,6 +21,9 @@ export class UsersServices{
     return await bcrypt.compare(password, hashedPassword); // Compare plain-text password with hashed
   }
 
+  async findOne(email: string): Promise<User | undefined> {
+    return this.userModel.findOne({ where: { email } });
+  }
 
   // Find user by _id (for JWT token validation)
   async findById(userId: string): Promise<User | null> {
