@@ -12,7 +12,7 @@ import { Document } from 'mongoose';
 @Schema()
 // marks the class as a Mongoose schema.
 export class User extends Document {
-  @Prop({ required: true })
+  @Prop()
   name: string;
 
   @Prop({ required: true })
